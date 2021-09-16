@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="150dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/watchlist_card"
+
+        app:cardCornerRadius="10dp">
+        <RelativeLayout
+            android:background="@color/colorSplashBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/watchlist_image_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <View
+            android:background="@drawable/trending_gradient_shape"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/watchlist_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="6dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ic_baseline_remove_circle_outline_24"
+        android:elevation="8dp"
+        />
+    <TextView
+        android:id="@+id/watchlist_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="6dp"
+        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/white"
+        android:text="Media"
+        android:elevation="8dp"
+        />
+</RelativeLayout>

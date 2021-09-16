@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorSplashBackground">
+
+<RelativeLayout
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorSplashBackground">
+    <ProgressBar
+        android:id="@+id/spinner_part"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/colorLogo"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/spinner_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner_part"
+        android:layout_marginTop="0dp"
+        android:text="Loading..."
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+</RelativeLayout>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorSplashBackground">
+
+    <LinearLayout
+        android:id="@+id/home_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20sp"
+        android:paddingTop="20sp"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            app:srcCompat="@drawable/ic_theaters_white_18dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="USC Films"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/movie_layout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@color/colorSplashBackground"
+            android:text="Movies"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/tv_layout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0dp"
+            android:layout_weight="0"
+            android:background="@color/colorSplashBackground"
+            android:text="TV shows"
+            android:textAllCaps="false"
+            android:textColor="@color/colorLogo" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/home_middle_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_top_layout"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/home_movie_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/movie_slider"
+            android:layout_width="360dp"
+            android:layout_height="380dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorEnabled="true"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="30dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="1dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="20sp"
+            android:text="Top-Rated"
+            android:textColor="@android:color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movie_recycler_view_top"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="20sp"
+            android:text="Popular"
+            android:textColor="@android:color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="20dp"
+            android:id="@+id/movie_recycler_view_pop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/home_tv_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/tv_slider"
+            android:layout_width="360dp"
+            android:layout_height="380dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorEnabled="true"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="30dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="1dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="20sp"
+            android:text="Top-Rated"
+            android:textColor="@android:color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="20dp"
+            android:id="@+id/tv_recycler_view_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="20sp"
+            android:text="Popular"
+            android:textColor="@android:color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="20dp"
+            android:id="@+id/tv_recycler_view_pop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/home_middle_layout"
+        android:id="@+id/home_footer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:visibility="gone"
+        tools:ignore="UnknownId">
+        <TextView
+            android:id="@+id/tmdb_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorLogo"
+            android:text="Powered by TMDB"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorLogo"
+            android:text="Developed by Chenliang Zhou"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
+</ScrollView>
+</RelativeLayout>

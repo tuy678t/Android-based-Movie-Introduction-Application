@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="5dp"
+    android:layout_width="wrap_content">
+
+
+<androidx.cardview.widget.CardView android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/colorSplashBackground"
+    android:id="@+id/review_card"
+    android:layout_width="380dp"
+    android:elevation="8dp"
+    android:outlineSpotShadowColor="@color/colorLogo"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="0.0px"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+
+    app:cardElevation="10dp"
+    android:layout_margin="4dp"
+    app:cardPreventCornerOverlap="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/review_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorLogo"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="by ABC on Mon, Mar, 01 2021"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/review_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="0/5"/>
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_baseline_star_rate_24"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/review_cont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:outlineAmbientShadowColor="@color/colorLogo"
+        android:outlineSpotShadowColor="@color/colorLogo"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:text="AAAAAAAABBBBBBBBBCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEEEEEEEEEEEEEEEEEEEEEEEEEFFFFFFFFFFFFFFFFFFFFFFFF"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+</FrameLayout>

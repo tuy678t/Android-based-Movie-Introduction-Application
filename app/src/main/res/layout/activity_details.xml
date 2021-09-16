@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorSplashBackground"
+    >
+    <RelativeLayout
+        android:id="@+id/details_load"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+        <ProgressBar
+            android:id="@+id/details_spinner_part"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/colorLogo"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/details_spinner_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_spinner_part"
+            android:layout_marginTop="0dp"
+            android:text="Loading..."
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/details_loaded"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical" >
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtube_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:autoPlay="false"
+            app:showFullScreenButton="false" />
+        <ImageView
+            android:id="@+id/details_default_picture"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+        <TextView
+            android:id="@+id/details_showname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLogo"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
+            android:paddingStart="10dp"
+            android:text="Showname"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:paddingStart="10dp"
+            android:text="Overview"
+            android:textColor="@color/colorLogo"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <com.borjabravo.readmoretextview.ReadMoreTextView
+            android:paddingStart="10dp"
+            android:textColor="@android:color/white"
+            android:id="@+id/details_overview_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:trimCollapsedText="show more"
+            app:trimExpandedText="show less"
+            app:colorClickableText="@android:color/darker_gray"
+            app:trimLength="200"
+            app:trimMode="trimModeLength"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:paddingStart="10dp"
+            android:paddingTop="6dp"
+            android:text="Genres"
+            android:textColor="@color/colorLogo"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/details_genres_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:paddingStart="10dp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:paddingTop="6dp"
+            android:paddingStart="10dp"
+            android:text="Year"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
+            android:textColor="@color/colorLogo"/>
+        <TextView
+            android:paddingStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:id="@+id/details_year_text"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:orientation="horizontal"
+            tools:ignore="RtlSymmetry">
+            <ImageView
+                android:id="@+id/details_watchlist_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_add_circle_outline_24"/>
+            <ImageView
+                android:id="@+id/details_facebook_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_baseline_facebook_24"/>
+            <ImageView
+                android:id="@+id/details_twitter_btn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_twitter_logo_dialog"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/details_cast_all"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:orientation="vertical">
+        
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Cast"
+                android:textColor="@color/colorLogo"/>
+            
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/details_cast_recyclerview"
+                android:overScrollMode="never"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/details_review_all"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
+            android:paddingStart="10dp"
+            android:text="Reviews"
+            android:textColor="@color/colorLogo"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/details_review_recyclerview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/details_recommended_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:paddingStart="10dp"
+            android:text="Recommended Picks"
+            android:textColor="@color/colorLogo"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/details_recommended_recyclerview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

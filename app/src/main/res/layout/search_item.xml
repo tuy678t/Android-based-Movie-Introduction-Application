@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:id="@+id/search_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:id="@+id/seach_item_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/search_item_left_top_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:paddingTop="30dp"
+        android:paddingStart="10dp"
+        android:text="MOVIE (2021)"
+        android:textColor="@android:color/white"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="2"
+        android:elevation="8dp"
+        android:textSize="16sp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:paddingTop="30dp"
+        android:paddingEnd="10dp"
+        android:elevation="8dp"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_star_rate_24"/>
+        <TextView
+            android:id="@+id/search_item_right_top_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="2"
+            android:text="3.5"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="10dp"
+        android:paddingStart="10dp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:elevation="8dp"
+        android:textColor="@android:color/white"
+        android:id="@+id/search_item_left_bottom_text"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="20sp"
+        android:text="Showname"
+        />
+
+</RelativeLayout>
